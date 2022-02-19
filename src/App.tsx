@@ -1,15 +1,21 @@
-import { useState } from 'react'
+import { useState } from 'react';
 
 import BlogPosts from './components/BlogPosts';
+import NavBar from './components/NavBar';
 
+import 'bootstrap/dist/css/bootstrap.min.css';
+
+import './App.css';
+import HeroSection from './components/HeroSection';
 
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
     <>
-      <BlogPosts/>
+      <NavBar/>
+      <HeroSection/>
+      {/* <BlogPosts/> */}
     </>
   )
 }
