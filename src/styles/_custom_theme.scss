@@ -1,0 +1,65 @@
+// Override default variables before the import
+// you can open the bootstrap.scss module and check any available variables.
+$highlight-primary: #FCD925;
+$highlight-secondary: #F8B129;
+
+$enable-rounded: false;
+
+$text-primary--light: #183153;
+$text-secondary--light: #2A4758;
+
+$text-primary--dark: #FAFAFA;
+$text-secondary--dark: #EAF0F3;
+
+$background-primary--light: #FAFAFA;
+$background-secondary--light: #EAF0F3;
+
+$background-primary--dark: #183153;
+$background-secondary--dark: #2A4758;
+
+$background-primary: 'background-primary';
+$background-secondary: 'background-secondary';
+$text-primary: 'text-primary';
+$text-secondary: 'text-secondary';
+
+$themes: (
+    light: (
+      background-primary: $background-primary--light,
+      background-secondary: $background-secondary--light,
+      text-primary: $text-primary--light,
+      text-secondary: $text-secondary--light,
+    ),
+    dark: (
+      background-primary: $background-primary--dark,
+      background-secondary: $background-secondary--dark,
+      text-primary: $text-primary--dark,
+      text-secondary: $text-secondary--dark,
+    ),
+);
+
+@mixin themify($themes) {
+  @each $theme, $map in $themes {
+    $theme-map: $map !global;
+    .theme__#{$theme} & {
+
+      // make a class for each theme using interpolation -> #{}
+      // use & for making the theme class ancestor of the class
+      // from which you use @include theme() {...}
+      @each $key, $submap in $map {
+          $value: map-get(map-get($themes, $theme), '#{$key}');
+          $theme-map: map-merge($theme-map, ($key: $value)) !global;
+      }
+        @content;    // the content inside @include theme() {...}
+    
+    }
+    // no use of the variable $theme-map now
+    $theme-map: null !global;
+  }
+}
+
+@function themed($key){
+  @return map-get($theme-map, $key);
+};
+
+// Import Bootstrap and its default variables
+@import '../node_modules/bootstrap/scss/bootstrap.scss';

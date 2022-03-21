@@ -1,0 +1,17 @@
+@use './styles/custom_theme' as *;
+
+
+.bg{
+  background: inherit;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  overflow: auto;
+  background-color: $background-primary--dark;
+
+  @include themify($themes){
+      background-color: themed("background-primary");
+  }
+}
