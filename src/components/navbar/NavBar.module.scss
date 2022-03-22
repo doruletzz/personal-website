@@ -1,0 +1,26 @@
+@use './../../styles/custom_theme' as *;
+
+.brand {
+    font-family: $font-family-primary;
+    font-weight: 700;
+    font-size: 2rem;
+    @include themify() {
+        color: themed($text-primary) ;
+    }
+
+}
+
+.navlink{
+    font-family: $font-family-primary;
+    font-weight: 400;
+    font-size: 1rem;
+    @include themify() {
+        color: themed($text-primary) !important ;
+    }
+}
+
+.toggle{
+    @include themify() {
+        color: themed($text-primary) !important ;
+    }
+}

@@ -46,17 +46,17 @@ export const { postsReceived, postsFetching, postsFailed, setPostsReceived } = a
 export default reducer 
 
 // Actions
-export const fetchPosts = (): AppThunk => {
-    return async (dispatch) => {
-        try {
-            dispatch(postsFetching());
-            const posts = receivePosts(count);
-            dispatch(postsReceived(posts))
-        } catch (error) {
-            dispatch(postsFailed(error));
-        }
-    }
-}
+// export const fetchPosts = (): AppThunk => {
+//     return async (dispatch) => {
+//         try {
+//             dispatch(postsFetching());
+//             const posts = receivePosts(count);
+//             dispatch(postsReceived(posts))
+//         } catch (error) {
+//             dispatch(postsFailed(error));
+//         }
+//     }
+// }
 
 export const fetchLatestPosts = (count : number): AppThunk => {
     return async (dispatch) => {

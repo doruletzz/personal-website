@@ -8,9 +8,8 @@
   bottom: 0;
   right: 0;
   overflow: auto;
-  background-color: $background-primary--dark;
 
-  @include themify($themes){
+  @include themify(){
       background-color: themed("background-primary");
   }
 }

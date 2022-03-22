@@ -11,7 +11,7 @@ const BlogSection = () => {
 
   const nrOfBlogPostCards = 4;
 
-  const data = useAppSelector(state => state.posts);
+  const {posts} = useAppSelector(state => state.posts);
 
   const dispatch = useAppDispatch();
 
@@ -31,7 +31,7 @@ const BlogSection = () => {
           <h5>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Tempor lectus diam consequat, id amet enim. Auctor nulla tortor quisque risus. Et et, commodo at nec tellus eget fermentum vel. Enim vel morbi sed facilisi morbi urna, quam aliquam sed.</h5>
         </Col>
         <Col lg={4} md={6}>
-          {data.posts.map(({ title, summary, createdAt, slug }, idx) => (
+          {posts.map(({ title, summary, createdAt, slug }, idx) => (
               <BlogPostCard key={idx} title={title} summary={summary} date={createdAt?.toLocaleString()} time="5 min" />
           ))}
 

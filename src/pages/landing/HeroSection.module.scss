@@ -1,0 +1,34 @@
+@use './../../styles/custom_theme' as *;
+
+@use './../../styles/button' as *;
+
+.header{
+    font-family: $font-family-secondary;
+    font-weight: 400;
+
+    font-size: 1.125rem;
+
+    @include themify() {
+        color: themed($text-primary) ;
+    }
+}
+
+.heading {
+    font-family: $font-family-primary;
+
+    font-size: 4rem;
+    @include themify() {
+        color: themed($text-primary) ;
+    }
+
+    .highlighted {
+        color: $highlight-secondary !important;
+    }
+}
+
+.btn_primary{
+    @include themify() {
+        @include custom_button_primary($highlight-primary, themed($text-primary));
+    }
+}
+

@@ -1,0 +1,43 @@
+@use '../../styles/custom_theme' as *;
+
+@use '../../styles/card' as *;
+
+.container{
+    justify-content: center;
+    text-align: center;
+
+}
+
+.card {
+    padding: 0;
+    position: relative;
+    margin: 0 auto;
+    margin-bottom: 2.25rem;
+    @include themify() {
+        @include custom_card($highlight-primary, themed($text-primary));
+    }
+
+    width: 38rem;
+}
+
+.img{
+    margin-bottom: 0.75rem;
+    padding: 0 !important;
+}
+
+.title{
+    padding-left: 1rem;
+    text-align: left;
+    font-family: $font-family-primary;
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.text {
+    padding-left: 1rem;
+    text-align: left;
+    font-size: 1.125rem;
+    font-family: $font-family-content;
+
+    margin-bottom: 1rem !important;
+}

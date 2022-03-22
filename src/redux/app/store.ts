@@ -3,8 +3,11 @@ import { ThunkAction } from 'redux-thunk'
 
 import blogReducer from '../blog/slice'
 
+import themeReducer from '../theme/slice'
+
 export const store = configureStore({
   reducer: {
+    theme: themeReducer,
     posts: blogReducer,
   },
   middleware: (getDefaultMiddleware) => getDefaultMiddleware({

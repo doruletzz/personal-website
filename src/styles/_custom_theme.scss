@@ -1,7 +1,11 @@
-// Override default variables before the import
-// you can open the bootstrap.scss module and check any available variables.
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300;400;500&family=JetBrains+Mono:ital,wght@0,300;0,400;0,700;0,800;1,300;1,400;1,700;1,800&family=Roboto:wght@300;400;700&display=swap');
+
 $highlight-primary: #FCD925;
 $highlight-secondary: #F8B129;
+
+$font-family-primary: "Jetbrains Mono";
+$font-family-content: "Roboto";
+$font-family-secondary: "Fredoka";
 
 $enable-rounded: false;
 
@@ -37,7 +41,7 @@ $themes: (
     ),
 );
 
-@mixin themify($themes) {
+@mixin themify() {
   @each $theme, $map in $themes {
     $theme-map: $map !global;
     .theme__#{$theme} & {
@@ -50,7 +54,7 @@ $themes: (
           $theme-map: map-merge($theme-map, ($key: $value)) !global;
       }
         @content;    // the content inside @include theme() {...}
-    
+        $theme-map: null !global;
     }
     // no use of the variable $theme-map now
     $theme-map: null !global;
@@ -62,4 +66,4 @@ $themes: (
 };
 
 // Import Bootstrap and its default variables
-@import '../node_modules/bootstrap/scss/bootstrap.scss';
+// @import '../node_modules/bootstrap/scss/bootstrap.scss';
