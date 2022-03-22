@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 
 import { Container, Row, Col } from 'react-bootstrap';
-import BlogPostCard from '../../components/BlogPostCard';
+import BlogPostCard from '../../components/blog/BlogPostCard';
 
 import { useAppDispatch, useAppSelector } from '../../redux/app/hooks';
 import { fetchLatestPosts } from '../../redux/blog/slice';
