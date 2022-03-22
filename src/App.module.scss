@@ -1,5 +1,9 @@
 @use './styles/custom_theme' as *;
 
+section {
+  padding-top: 5.5rem;
+}
+
 .bg{
   background: inherit;
   position: fixed;

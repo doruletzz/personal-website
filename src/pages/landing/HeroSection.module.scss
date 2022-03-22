@@ -2,14 +2,19 @@
 
 @use './../../styles/button' as *;
 
+.content{
+    padding-top: 8rem;
+}
+
 .header{
     font-family: $font-family-secondary;
     font-weight: 400;
 
     font-size: 1.125rem;
 
+    margin-bottom: 1.125rem;
     @include themify() {
-        color: themed($text-primary) ;
+        color: themed($text-secondary) ;
     }
 }
 
@@ -21,6 +26,7 @@
         color: themed($text-primary) ;
     }
 
+    margin-bottom: 1.125rem;
     .highlighted {
         color: $highlight-secondary !important;
     }
@@ -30,5 +36,7 @@
     @include themify() {
         @include custom_button_primary($highlight-primary, themed($text-primary));
     }
+
+    margin-right: 4rem;
 }
 

@@ -12,10 +12,10 @@ const WorksSection = () => {
     const text = "A very short summary of the work page including only the main ideas that should be covered.";
 
     return (
-        <section className={isDark ? styles.theme__dark : styles.theme__light}>
+        <section id="works" className={isDark ? styles.theme__dark : styles.theme__light}>
             <Container fluid className={styles.container}>
                 <Row>
-                <h4>SOME OF MY WORKS</h4>
+                <h4 className={styles.header}>SOME OF MY WORKS</h4>
                 </Row>
                 <Row>
 
@@ -29,8 +29,8 @@ const WorksSection = () => {
                 </Row>
                 <Row>
                 <Card className={styles.card}>
+                    <Card.Img className={styles.img} src="https://images.unsplash.com/photo-1554415707-6e8cfc93fe23?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" />
                     <Card.Body>
-                        <Card.Img className={styles.img} src="https://images.unsplash.com/photo-1554415707-6e8cfc93fe23?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" />
                         <Card.Title className={styles.title}>{title}</Card.Title>
                         <Card.Text className={styles.text}>{text}</Card.Text>
                     </Card.Body>

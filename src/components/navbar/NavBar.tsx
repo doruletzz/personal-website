@@ -13,26 +13,27 @@ const NavBar = () => {
   const dispatch = useAppDispatch();
 
   return (
-    <div >
-      <Navbar collapseOnSelect expand="lg" sticky="top">
-        <Container fluid className={isDark ? styles.theme__dark : styles.theme__light}>
-          <Navbar.Brand href="#home"><b className={styles.brand}>dor-</b></Navbar.Brand>
-          <Navbar.Toggle>
-            <FaBars className={styles.toggle} />
-          </Navbar.Toggle>
-          <Navbar.Collapse className="justify-content-end" id="responsive-navbar-nav">
-            <Nav>
-              <Nav.Link className={styles.navlink} href="#resume">resume</Nav.Link>
-              <Nav.Link className={styles.navlink} href="#works">works</Nav.Link>
-              <Nav.Link className={styles.navlink} href="#blog">blog</Nav.Link>
-              <Nav.Item className={styles.navlink} onClick={() => dispatch(switchTheme(!isDark))} style={{ cursor: "pointer" }}>
-                {isDark ? <FaSun /> : <FaMoon />}
-              </Nav.Item>
-            </Nav>
-          </Navbar.Collapse>
-        </Container>
-      </Navbar>
-    </div>
+
+    <Navbar collapseOnSelect className={styles.navbar} expand="lg" fixed="top">
+
+      <Container className={isDark ? styles.theme__dark : styles.theme__light}>
+        <Navbar.Brand className={styles.brand} href="#tools"><p  className={styles.logo}>dor-</p></Navbar.Brand>
+        <Navbar.Toggle>
+          <FaBars className={styles.toggle} />
+        </Navbar.Toggle>
+        <Navbar.Collapse className="justify-content-end" id="responsive-navbar-nav">
+          <Nav>
+            <Nav.Link className={styles.navlink} href="#resume">resume</Nav.Link>
+            <Nav.Link className={styles.navlink} href="#works">works</Nav.Link>
+            <Nav.Link className={styles.navlink} href="#blog">blog</Nav.Link>
+            <Nav.Item className={styles.navlink} onClick={() => dispatch(switchTheme(!isDark))} style={{ cursor: "pointer" }}>
+              {isDark ? <FaSun /> : <FaMoon />}
+            </Nav.Item>
+          </Nav>
+        </Navbar.Collapse>
+      </Container>
+    </Navbar>
+
   )
 }
 

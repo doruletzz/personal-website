@@ -2,6 +2,17 @@
 
 @use '../../styles/card' as *;
 
+
+.header{
+    font-family: $font-family-secondary;
+    font-weight: 400;
+    font-size: 1.125rem;
+    margin-bottom: 1.25rem;
+
+    @include themify() {
+         color: themed($text-primary);
+    }
+}
 .container{
     justify-content: center;
     text-align: center;

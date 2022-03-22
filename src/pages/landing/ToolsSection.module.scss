@@ -1,0 +1,78 @@
+@use '../../styles/custom_theme' as *;
+
+@use '../../styles/card' as *;
+@use '../../styles/button' as *;
+
+.card{
+    padding: 0;
+    position: relative;
+    margin: 0 auto;
+    margin-bottom: 2.25rem;
+    
+    @include themify() {
+        @include custom_card($highlight-primary, themed($text-primary));
+    }
+}
+
+
+.title{
+    padding: 0.5rem 0;
+    text-align: left;
+    font-family: $font-family-primary;
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.text {
+    padding: 0.5rem 0;
+    text-align: left;
+    font-size: 1.125rem;
+    font-family: $font-family-content;
+}
+
+.header{
+    font-family: $font-family-secondary;
+    font-weight: 400;
+
+    font-size: 1.125rem;
+
+    margin-bottom: 1.125rem;
+    @include themify() {
+        color: themed($text-secondary) ;
+    }
+}
+
+.heading {
+    font-family: $font-family-primary;
+
+    font-size: 2.25rem;
+    @include themify() {
+        color: themed($text-primary) ;
+    }
+
+    margin-bottom: 1.125rem;
+    .highlighted {
+        color: $highlight-secondary !important;
+    }
+}
+
+.content{
+    font-family: $font-family-content;
+
+    font-size: 1.125rem;
+    @include themify() {
+        color: themed($text-secondary) ;
+    }
+
+    margin-bottom: 1.125rem;
+    .highlighted {
+        color: $highlight-secondary !important;
+    }
+}
+
+.btn_primary{
+    @include themify() {
+        @include custom_button_primary($highlight-primary, themed($text-primary));
+    }
+
+}

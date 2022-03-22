@@ -9,10 +9,10 @@ const HeroSection = () => {
   const { isDark } = useAppSelector(state => state.theme);
 
   return (
-    <section>
+    <section id="home">
       <Container fluid className={isDark ? styles.theme__dark : styles.theme__light}>
         <Row>
-          <Col lg={8} md={6}>
+          <Col lg={8} md={6} className={styles.content}>
             <h4 className={styles.header}><FaMapPin /> LOCATED IN CLUJ-NAPOCA, ROMANIA</h4>
             <h1 className={styles.heading}>
               hi, i'm dorletz. <br /> a <b className={styles.highlighted}>passionate</b> <br /> frontend developer

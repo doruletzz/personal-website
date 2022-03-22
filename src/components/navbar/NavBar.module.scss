@@ -1,9 +1,18 @@
 @use './../../styles/custom_theme' as *;
 
-.brand {
+.navbar{
+    height: 5rem;
+}
+
+.brand{
+    padding-left: 0.25rem !important;
+}
+
+.logo {
     font-family: $font-family-primary;
     font-weight: 700;
     font-size: 2rem;
+
     @include themify() {
         color: themed($text-primary) ;
     }
