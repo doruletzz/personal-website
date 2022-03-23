@@ -44,6 +44,7 @@
 
 .heading {
     font-family: $font-family-primary;
+    font-weight: 700;
 
     font-size: 2.25rem;
     @include themify() {
