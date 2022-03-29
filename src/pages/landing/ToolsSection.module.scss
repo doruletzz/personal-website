@@ -10,23 +10,37 @@
     margin-bottom: 2.25rem;
     
     @include themify() {
-        @include custom_card($highlight-primary, themed($text-primary));
+        @include custom_card(themed($background-tertiary), themed($border_color));
     }
 }
 
+.card_title{
+    @include themify() {
+        color: themed($text-primary) ;
+    }
+}
+
+.card_text{
+    @include themify() {
+        color: themed($text-secondary) ;
+    }
+}
+
+.card_img{
+}
 
 .title{
     padding: 0.5rem 0;
     text-align: left;
     font-family: $font-family-primary;
-    font-size: 1.5rem;
+    font-size: 1.25rem;
     font-weight: 700;
 }
 
 .text {
     padding: 0.5rem 0;
     text-align: left;
-    font-size: 1.125rem;
+    font-size: 1rem;
     font-family: $font-family-content;
 }
 
@@ -34,9 +48,9 @@
     font-family: $font-family-secondary;
     font-weight: 400;
 
-    font-size: 1.125rem;
+    font-size: 1rem;
 
-    margin-bottom: 1.125rem;
+    margin-bottom: 0.5rem;
     @include themify() {
         color: themed($text-secondary) ;
     }
@@ -60,12 +74,12 @@
 .content{
     font-family: $font-family-content;
 
-    font-size: 1.125rem;
+    font-size: 1rem;
     @include themify() {
         color: themed($text-secondary) ;
     }
 
-    margin-bottom: 1.125rem;
+    margin-bottom: 1rem;
     .highlighted {
         color: $highlight-secondary !important;
     }
@@ -73,7 +87,7 @@
 
 .btn_primary{
     @include themify() {
-        @include custom_button_primary($highlight-primary, themed($text-primary));
+        @include custom_button_primary(themed($background-tertiary), themed($text-primary), themed($border_color));
     }
 
 }

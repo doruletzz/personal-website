@@ -12,7 +12,7 @@ const LandingPage = () => {
         <WorksSection/>
         <ToolsSection/>
         <BlogSection/>
-        <ContactSection/>
+        {/* <ContactSection/> */}
     </div>
   )
 }

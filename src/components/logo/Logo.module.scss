@@ -1,0 +1,35 @@
+@use '../../styles/custom_theme' as *;
+
+.logo_xl {
+    font-family: $font-family-primary;
+    font-weight: 700 !important;
+    font-size: 1.5rem;
+
+    letter-spacing: 0.5rem !important;
+
+    @include themify() {
+        color: themed($text-primary) !important;
+    }
+
+    &:hover {
+        color: $highlight-primary !important;
+    }
+
+}
+
+.logo_sm {
+    font-family: $font-family-primary;
+    font-weight: 700 !important;
+    font-size: 1rem;
+
+    letter-spacing: 0.5rem !important;
+
+    @include themify() {
+        color: themed($text-primary) !important;
+    }
+
+    &:hover {
+        color: $highlight-primary !important;
+    }
+
+}

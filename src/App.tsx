@@ -6,21 +6,43 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import styles from './App.module.scss';
 
 
-import { Container } from 'react-bootstrap'
+import { Container, Row, Col } from 'react-bootstrap'
 import LandingPage from './pages/landing/LandingPage';
 import { useAppSelector } from './redux/app/hooks';
+import Footer from './components/footer/Footer';
+
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import UnderConstructionPage from './pages/under-construction/UnderConstructionPage';
 
 function App() {
 
-  const {isDark} = useAppSelector(state => state.theme);
+  
+  
+
+
+
+
+  const { isDark } = useAppSelector(state => state.theme);
 
   return (
+
     <div className={isDark ? styles.theme__dark : styles.theme__light}>
       <div className={styles.bg}>
         <Container >
-          <NavBar />
-          <LandingPage />
+
+          <Row>
+
+            <NavBar />
+            <Router>
+              <Routes >
+
+                <Route path="/" element={<LandingPage />} />
+                <Route path="/blog/:slug" element={<UnderConstructionPage />} />
+              </Routes>
+            </Router>
+          </Row>
         </Container>
+        <Footer />
       </div>
     </div>
   )

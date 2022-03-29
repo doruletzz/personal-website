@@ -6,7 +6,7 @@
 .header{
     font-family: $font-family-secondary;
     font-weight: 400;
-    font-size: 1.125rem;
+    font-size: 1rem;
     margin-bottom: 1.25rem;
 
     @include themify() {
@@ -25,10 +25,10 @@
     margin: 0 auto;
     margin-bottom: 2.25rem;
     @include themify() {
-        @include custom_card($highlight-primary, themed($text-primary));
+        @include custom_card(themed($background-tertiary), themed($border_color));
     }
+    max-width: 38rem;
 
-    width: 38rem;
 }
 
 .img{
@@ -40,15 +40,23 @@
     padding-left: 1rem;
     text-align: left;
     font-family: $font-family-primary;
-    font-size: 1.5rem;
+    font-size: 1.250rem;
     font-weight: 700;
+
+    @include themify() {
+        color: themed($text-primary) ;
+    }
 }
 
 .text {
     padding-left: 1rem;
     text-align: left;
-    font-size: 1.125rem;
+    font-size: 1rem;
     font-family: $font-family-content;
+
+    @include themify() {
+        color: themed($text-secondary) ;
+    }
 
     margin-bottom: 1rem !important;
 }

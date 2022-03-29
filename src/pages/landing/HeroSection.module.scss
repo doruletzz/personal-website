@@ -3,16 +3,21 @@
 @use './../../styles/button' as *;
 
 .content{
-    padding-top: 8rem;
+    padding-top: 3rem;
+}
+
+.hero_image{
+    float: right;
+    margin: 0 auto;
 }
 
 .header{
     font-family: $font-family-secondary;
     font-weight: 400;
 
-    font-size: 1.125rem;
+    font-size: 1rem;
 
-    margin-bottom: 1.125rem;
+    margin-bottom: 1rem;
     @include themify() {
         color: themed($text-secondary) ;
     }
@@ -26,7 +31,7 @@
         color: themed($text-primary) ;
     }
 
-    margin-bottom: 1.125rem;
+    margin-bottom: 1rem;
     .highlighted {
         color: $highlight-secondary !important;
     }
@@ -34,9 +39,10 @@
 
 .btn_primary{
     @include themify() {
-        @include custom_button_primary($highlight-primary, themed($text-primary));
+        @include custom_button_primary(themed($background-tertiary), themed($text-primary), themed($border_color));
     }
 
     margin-right: 4rem;
+    margin-bottom: 2rem;
 }
 

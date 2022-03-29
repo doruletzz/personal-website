@@ -1,0 +1,50 @@
+.container_illustration{
+    display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+
+  width: 100%;
+  text-align: center;
+  
+  -webkit-justify-content: center;
+  justify-content: center;
+}
+
+.illustration-outer{
+    margin-top: 16rem;
+    position: relative;
+    width: 100%;
+} 
+
+.illustration-inner{
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    
+    
+}
+
+.i1 {
+    left: 85px;
+    top: 26px;
+}
+  
+.i2 {
+    left: 148px;
+    top: -15px;
+}
+  
+.i3 {
+    left: 40px;
+    top: 82px;
+}
+  
+.i4 {
+    left: 45px;
+    top: 60px;
+}
+
+
+  

@@ -6,9 +6,8 @@ import { useAppSelector } from '../../redux/app/hooks';
 import styles from './ContactSection.module.scss';
 
 const ContactSection = () => {
+    
     const { isDark } = useAppSelector(state => state.theme);
-
-
 
     return (
         <section id="contact" className={isDark ? styles.theme__dark : styles.theme__light}>

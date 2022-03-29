@@ -1,15 +1,25 @@
 @use './custom_theme' as *;
 
-@mixin custom_button_primary($color, $border_color){
-    background-color: $color;
+@mixin custom_button_primary($background_color, $content_color , $border_color){
+    background-color: $background_color;
 
     font-family: $font-family-content;
-    font-size: 1.125rem;
+    font-size: 1rem;
 
     border: 0.125rem solid $border_color;
     border-radius: 0px;
     box-sizing: border-box;
     box-shadow: 0px 0.25rem 0px $border_color;
 
-    color: $border_color;
+    color: $content_color;
+
+    &:hover {
+        color: $highlight-secondary;
+
+        border: 0.125rem solid $highlight-primary;
+        border-radius: 0px;
+        box-sizing: border-box;
+        box-shadow: 0px 0.375rem 0px $highlight-primary;
+        // background-color: $border_color;
+    }
 }

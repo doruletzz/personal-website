@@ -6,6 +6,8 @@ import BlogPostCard from '../../components/blog/BlogPostCard';
 import { useAppDispatch, useAppSelector } from '../../redux/app/hooks';
 import { fetchLatestPosts } from '../../redux/blog/slice';
 
+import { Link } from 'react-router-dom';
+
 
 import styles from './BlogSection.module.scss'
 
@@ -38,8 +40,10 @@ const BlogSection = () => {
           <Col lg={2} md={1} />
           <Col lg={4} md={6}>
             {posts.map(({ title, summary, createdAt, slug }, idx) => (
-              <div className={styles.blog_post_card}>
-                <BlogPostCard key={idx} title={title} summary={summary} date={createdAt?.toLocaleString()} time="5 min" />
+              <div key={idx}  className={styles.blog_post_card}>
+                <Link to={"blog/" + slug}>
+                <BlogPostCard  title={title} summary={summary} date={createdAt?.toLocaleString()} time="5 min" />
+                </Link>
               </div>
             ))}
 

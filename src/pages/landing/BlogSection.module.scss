@@ -1,5 +1,7 @@
 @use './../../styles/custom_theme' as *;
 
+@use './../../styles/button' as *;
+
 @use './../../styles/card' as *;
 
 .header{
@@ -39,6 +41,10 @@
 }
 
 .blog_post_card{
+    a {
+        text-decoration: none !important
+    }
+
     margin-bottom: 2rem;
 }
 
