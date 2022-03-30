@@ -6,7 +6,7 @@ import styles from './BlogPostCard.module.scss';
 
 
 //TODO: add param type
-const BlogPostCard = ({ title, summary, date, time }) => {
+const BlogPostCard = ({ title, summary, date, time } : any) => {
 
   const { isDark } = useAppSelector(state => state.theme);
 

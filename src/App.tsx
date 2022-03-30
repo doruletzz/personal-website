@@ -13,11 +13,12 @@ import Footer from './components/footer/Footer';
 
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import UnderConstructionPage from './pages/under-construction/UnderConstructionPage';
+import SmoothScroll from './utils/SmoothScroll';
 
 function App() {
 
-  
-  
+
+
 
 
 
@@ -27,23 +28,20 @@ function App() {
   return (
 
     <div className={isDark ? styles.theme__dark : styles.theme__light}>
-      <div className={styles.bg}>
-        <Container >
-
-          <Row>
-
-            <NavBar />
-            <Router>
+      <Router>
+        <div className={styles.bg}>
+          <Container >
+            <Row>
+              <NavBar />
               <Routes >
-
                 <Route path="/" element={<LandingPage />} />
                 <Route path="/blog/:slug" element={<UnderConstructionPage />} />
               </Routes>
-            </Router>
-          </Row>
-        </Container>
-        <Footer />
-      </div>
+              <Footer />
+            </Row>
+          </Container>
+        </div>
+      </Router>
     </div>
   )
 }

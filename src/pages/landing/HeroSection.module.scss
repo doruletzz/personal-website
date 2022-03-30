@@ -46,3 +46,12 @@
     margin-bottom: 2rem;
 }
 
+.btn_secundary{
+    @include themify() {
+        @include custom_button_secundary(themed($background-primary), themed($text-primary), themed($border_color));
+    }
+
+    margin-right: 4rem;
+    margin-bottom: 2rem;
+}
+

@@ -1,6 +1,6 @@
 import React from 'react';
 
-const BlogPost = ({title, summary, date, time}) => {
+const BlogPost = ({title, summary, date, time} : any) => {
   return (
     <div>BlogPost</div>
   )

@@ -1,5 +1,7 @@
 import React from 'react'
 import { Card, Container, Row, Col } from 'react-bootstrap';
+import { FaBook, FaBookDead, FaBookOpen } from 'react-icons/fa';
+import Header from '../../components/header/Header';
 import { useAppSelector } from '../../redux/app/hooks';
 
 import styles from './WorksSection.module.scss';
@@ -17,7 +19,11 @@ const WorksSection = () => {
                 <Row>
 
                     <Row>
-                        <h4 className={styles.header}>SOME OF MY WORKS</h4>
+                        
+                        <div className={styles.header} >
+                            <Header content={"SOME OF MY WORKS"} icon={<FaBook/>} sectionLink="#works"/>
+                        </div>
+                        <h4 className={styles.header}></h4>
                     </Row>
                     <Row>
                         <Col lg={12} md={6}>

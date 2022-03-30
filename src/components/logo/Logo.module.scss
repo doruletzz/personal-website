@@ -8,7 +8,7 @@
     letter-spacing: 0.5rem !important;
 
     @include themify() {
-        color: themed($text-primary) !important;
+        color: themed($text-primary);
     }
 
     &:hover {

@@ -3,6 +3,7 @@
 @use '../../styles/card' as *;
 @use '../../styles/button' as *;
 
+
 .card{
     padding: 0;
     position: relative;
@@ -45,15 +46,10 @@
 }
 
 .header{
-    font-family: $font-family-secondary;
-    font-weight: 400;
-
-    font-size: 1rem;
-
-    margin-bottom: 0.5rem;
     @include themify() {
-        color: themed($text-secondary) ;
+        color: themed($text-secondary) !important;
     }
+
 }
 
 .heading {
@@ -72,6 +68,8 @@
 }
 
 .content{
+
+    
     font-family: $font-family-content;
 
     font-size: 1rem;

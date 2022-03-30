@@ -11,13 +11,18 @@ const Footer = () => {
   const { isDark } = useAppSelector(state => state.theme);
 
   return (
+    <>
     <div className={isDark ? styles.theme__dark : styles.theme__light}>
+
+      <div className={styles.background}>
+    </div>
       <Container fluid className={`${styles.footer} ${"sticky-bottom"}`}>
         <Row>
           <Col>
-            <Logo isSmall={true}/>
+            <div className={styles.logo}>
+              <Logo isSmall={true} />
+            </div>
           </Col>
-
           <Col>
             <p className={styles.copyright}>
               done by me with ❤︎ and coffee
@@ -27,8 +32,8 @@ const Footer = () => {
 
         </Row>
       </Container>
-
-    </div>
+      </div>
+    </>
   )
 }
 

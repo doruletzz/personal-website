@@ -1,10 +1,11 @@
 import React from 'react'
 import { Container, Row, Col, Card, CardGroup, Button } from 'react-bootstrap';
-import CardHeader from 'react-bootstrap/esm/CardHeader';
-import { Link } from 'react-router-dom';
 import { useAppSelector } from '../../redux/app/hooks';
 
 import styles from './ToolsSection.module.scss'
+
+import { FaToolbox } from 'react-icons/fa';
+import Header from '../../components/header/Header';
 
 const ToolsSection = () => {
     const title = "Card Title";
@@ -51,10 +52,13 @@ const ToolsSection = () => {
                     </Col >
 
                     <Col lg={5} xs={12} md={12} >
-                        <h4 className={styles.header}>TOOLS FOR THE JOB</h4>
+                        <div className={styles.header} >
+                            <Header content={"TOOLS FOR THE JOB"} icon={<FaToolbox/>} sectionLink="#tools"/>
+                        </div>
+                        <h4 > </h4>
                         <h1 className={styles.heading}>Technologies that i use day to day</h1>
                         <h5 className={styles.content}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Tellus sed integer pulvinar quam scelerisque. Arcu hendrerit ut aliquet lorem vitae sit. Ut ornare sed iaculis blandit nulla</h5>
-                        <Button className={styles.btn_primary}>View Resume</Button>
+                        <Button className={styles.btn_primary}>Hire me</Button>
                     </Col>
                 </Row>
             </Container>

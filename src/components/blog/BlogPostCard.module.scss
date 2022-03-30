@@ -7,19 +7,19 @@
         @include custom_button_primary(themed($background-tertiary), themed($text-primary), themed($border_color));
     }
 
-    &:hover{
-        .title{
-            color: $highlight-primary !important;
-        }
+    // &:hover{
+    //     .title{
+    //         color: $highlight-primary !important;
+    //     }
 
-        .subtitle{
-            color: $highlight-secondary !important;
-        }
+    //     .subtitle{
+    //         color: $highlight-secondary !important;
+    //     }
 
-        .content{
-                color: $highlight-secondary !important;
-        }
-    }
+    //     .content{
+    //             color: $highlight-secondary !important;
+    //     }
+    // }
 
     .title{
         font-family: $font-family-primary;
