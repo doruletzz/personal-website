@@ -1,5 +1,5 @@
 import React, { useEffect, useState, FunctionComponent } from 'react';
-import { Navbar, Container, Nav, Row, Image } from 'react-bootstrap';
+import { Navbar, Container, Nav, Col, Row, Image } from 'react-bootstrap';
 import { FaSun, FaMoon, FaBars } from 'react-icons/fa';
 import { useAppSelector, useAppDispatch } from '../../redux/app/hooks';
 import { switchTheme } from '../../redux/theme/slice';
@@ -20,6 +20,20 @@ import { Link } from 'react-router-dom';
 const NavBar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
 
+  const [width, setWidth] = useState<number>(window.innerWidth);
+
+  function handleWindowSizeChange() {
+    setWidth(window.innerWidth);
+  }
+  useEffect(() => {
+    window.addEventListener('resize', handleWindowSizeChange);
+    return () => {
+      window.removeEventListener('resize', handleWindowSizeChange);
+    }
+  }, []);
+
+  const isMobile = width <= 768;
+
   // const DarkIcon = () => <svg className={styles.icon_theme_scrolled}><Image src={DarkUrl}/></svg>;
   // const LightIcon = () => <svg><Image src={DarkUrl}/></svg>;
   // const WorksIcon = () => <svg><Image src={DarkUrl}/></svg>;
@@ -29,8 +43,6 @@ const NavBar = () => {
 
   const handleScroll = () => {
     setIsScrolled(window.scrollY > 240);
-    console.log(isScrolled);
-
   }
 
   useEffect(() => {
@@ -45,33 +57,28 @@ const NavBar = () => {
 
   return (
     <>
-      <Navbar className={`${styles.navbar} ${"sticky-top"}`} expand="lg" >
+      <Navbar className={`${styles.navbar} ${"sticky-top"}`} >
         <Container fluid className={isDark ? styles.theme__dark : styles.theme__light}>
 
           <Navbar.Brand className="brand" >
-            <Link to="/" onClick={() => window.scrollTo({top: 0})}>
+            <Link to="/" onClick={() => window.scrollTo({ top: 0 })}>
               <Logo isSmall={isScrolled} />
             </Link>
           </Navbar.Brand>
-          <Navbar.Toggle>
-            <FaBars className={styles.toggle} />
-          </Navbar.Toggle>
-          <Navbar.Collapse className="justify-content-end" id="responsive-navbar-nav">
-            <Nav>
-              <Nav.Link className={styles.navlink} href="#tools">
-                {isScrolled ? <ResumeIcon  className={styles.icon_theme_scrolled}/> : <p>resume</p>}
-              </Nav.Link>
-              <Nav.Link className={styles.navlink} href="#works">
-                {isScrolled ? <WorksIcon  className={styles.icon_theme_scrolled}/> : <p>works</p>}
-              </Nav.Link>
-              <Nav.Link className={styles.navlink} href="#blog">
-                {isScrolled ? <BlogIcon  className={styles.icon_theme_scrolled}/> : <p>blog</p>}
-              </Nav.Link>
-              <Nav.Link className={styles.navlink} onClick={() => dispatch(switchTheme(!isDark))} style={{ cursor: "pointer" }}>
-                {isDark ? <DarkIcon className={styles.icon_theme_scrolled} /> : <LightIcon  className={styles.icon_theme_scrolled}/>}
-              </Nav.Link>
-            </Nav>
-          </Navbar.Collapse>
+          <Nav>
+            <Nav.Link className={styles.navlink} href="#tools">
+              {isScrolled || isMobile ? <ResumeIcon className={styles.icon_theme_scrolled} /> : <p>resume</p>}
+            </Nav.Link>
+            <Nav.Link className={styles.navlink} href="#works">
+              {isScrolled || isMobile ? <WorksIcon className={styles.icon_theme_scrolled} /> : <p>works</p>}
+            </Nav.Link>
+            <Nav.Link className={styles.navlink} href="#blog">
+              {isScrolled || isMobile  ? <BlogIcon className={styles.icon_theme_scrolled} /> : <p>blog</p>}
+            </Nav.Link>
+            <Nav.Link className={styles.navlink} onClick={() => dispatch(switchTheme(!isDark))} style={{ cursor: "pointer" }}>
+              {isScrolled || isMobile  ? <DarkIcon className={isScrolled || isMobile ? styles.icon_theme_scrolled : styles.icon_theme} /> : <LightIcon className={isScrolled || isMobile ? styles.icon_theme_scrolled : styles.icon_theme} />}
+            </Nav.Link>
+          </Nav>
 
         </Container >
       </Navbar>
