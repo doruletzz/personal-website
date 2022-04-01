@@ -84,6 +84,9 @@
 }
 
 .btn_primary{
+
+    margin-bottom: 2.25rem;
+    
     @include themify() {
         @include custom_button_primary(themed($background-tertiary), themed($text-primary), themed($border_color));
     }

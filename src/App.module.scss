@@ -4,10 +4,7 @@ section {
   padding-top: 4rem;
 }
 
-
-
 .bg{
-
   @include themify(){
       background-color: themed("background-primary");
   }

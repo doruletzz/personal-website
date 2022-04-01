@@ -73,10 +73,10 @@ const NavBar = () => {
               {isScrolled || isMobile ? <WorksIcon className={styles.icon_theme_scrolled} /> : <p>works</p>}
             </Nav.Link>
             <Nav.Link className={styles.navlink} href="#blog">
-              {isScrolled || isMobile  ? <BlogIcon className={styles.icon_theme_scrolled} /> : <p>blog</p>}
+              {isScrolled || isMobile ? <BlogIcon className={styles.icon_theme_scrolled} /> : <p>blog</p>}
             </Nav.Link>
             <Nav.Link className={styles.navlink} onClick={() => dispatch(switchTheme(!isDark))} style={{ cursor: "pointer" }}>
-              {isScrolled || isMobile  ? <DarkIcon className={isScrolled || isMobile ? styles.icon_theme_scrolled : styles.icon_theme} /> : <LightIcon className={isScrolled || isMobile ? styles.icon_theme_scrolled : styles.icon_theme} />}
+              {isDark || isMobile ? <DarkIcon className={isScrolled || isMobile ? styles.icon_theme_scrolled : styles.icon_theme} /> : <LightIcon className={isScrolled || isMobile ? styles.icon_theme_scrolled : styles.icon_theme} />}
             </Nav.Link>
           </Nav>
 

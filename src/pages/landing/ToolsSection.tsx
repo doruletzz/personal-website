@@ -19,9 +19,9 @@ const ToolsSection = () => {
 
             <Container fluid className={isDark ? styles.theme__dark : styles.theme__light}  >
                 <Row>
-                    <Col lg={7} >
+                    <Col lg={7} xs={{span: 12, order: 2}} >
                         <Row>
-                            <Col lg={4} md={4} xs={12} >
+                            <Col lg={4} md={4}  >
                                 <Card className={styles.card} >
                                     <Card.Body>
                                         <Card.Title className={styles.card_title}>{title}</Card.Title>
@@ -51,7 +51,7 @@ const ToolsSection = () => {
                         </Row>
                     </Col >
 
-                    <Col lg={5} xs={12} md={12} >
+                    <Col lg={5} xs={{span: 12, order: 1 }} md={12} >
                         <div className={styles.header} >
                             <Header content={"TOOLS FOR THE JOB"} icon={<FaToolbox/>} sectionLink="#tools"/>
                         </div>

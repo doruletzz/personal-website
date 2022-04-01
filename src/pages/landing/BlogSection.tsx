@@ -31,7 +31,7 @@ const BlogSection = () => {
   return (
     <section >
       <div id="blog" className={isDark ? styles.theme__dark : styles.theme__light}>
-        <Container fluid>
+        <Container fluid className={styles.wrapper}>
           <Row>
             <Col lg={6} md={5}>
               <div className={styles.header} >

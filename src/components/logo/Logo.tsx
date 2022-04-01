@@ -1,13 +1,13 @@
 import TextTransition, { presets } from "react-text-transition";
-
-import React from 'react';
+import { useIsPresent } from 'framer-motion'
+import React, {useState, useEffect} from 'react';
 
 import styles from './Logo.module.scss'
 import { useAppDispatch, useAppSelector } from "../../redux/app/hooks";
 
 const TEXTS = [
-    "dor-",
     "letz",
+    "dor-",
 ];
 
 interface LogoProps {
@@ -17,19 +17,21 @@ interface LogoProps {
 function Logo({isSmall} : LogoProps) {
     const { isDark } = useAppSelector(state => state.theme);
 
-    const [index, setIndex] = React.useState(0);
+    const [index, setIndex] = useState(0);
 
-    React.useEffect(() => {
+
+    useEffect(() => {
         const intervalId = setInterval(() =>
-            setIndex(index => index + 1),
+            setIndex(index => ( index + 1 % TEXTS.length)),
             5000 // every 5 seconds
+
         );
         return () => clearTimeout(intervalId);
-    }, [isSmall]);
-
+    }, [index]);
 
 
     return (
+        
         <div className={isDark ? styles.theme__dark : styles.theme__light}>
             <h1 className={isSmall ? styles.logo_sm : styles.logo_xl}
                 onMouseEnter={() => { setIndex(index + 1) }}
@@ -43,7 +45,7 @@ function Logo({isSmall} : LogoProps) {
                             inline={true}
                             noOverflow={false}
                         />
-                    ))}
+                    )) }
             </h1>
         </div>
 
