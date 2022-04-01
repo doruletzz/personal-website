@@ -148,8 +148,8 @@ const Illustration = ({ width }) => {
                 duration: 2,
                 repeat: Infinity,
                 repeatType: 'reverse'
-              }}>
-        id="terminal" filter="url(#filter4_d_173_881)">
+              }}
+              id="terminal" filter="url(#filter4_d_173_881)">
               <rect id="Rectangle 44" width="333.347" height="396.353" rx="25" transform="matrix(0.962455 0.27144 0 1 443.204 466)" fill="#FCD925" />
               <path id="Vector 13 (Stroke)_2" fill-rule="evenodd" clip-rule="evenodd" d="M506.666 583.536C506.666 579.489 509.823 577.1 513.717 578.198L698.46 630.301C702.354 631.399 705.511 635.57 705.511 639.616C705.511 643.662 702.354 646.052 698.46 644.953L513.717 592.851C509.823 591.752 506.666 587.582 506.666 583.536Z" fill="#4E6081" />
               <path id="Vector 14 (Stroke)_3" fill-rule="evenodd" clip-rule="evenodd" d="M506.666 656.799C506.666 652.753 509.823 650.363 513.717 651.461L698.46 703.564C702.354 704.662 705.511 708.833 705.511 712.879C705.511 716.925 702.354 719.315 698.46 718.216L513.717 666.114C509.823 665.015 506.666 660.845 506.666 656.799Z" fill="#4E6081" />

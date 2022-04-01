@@ -23,6 +23,7 @@ const Animation = () => {
 
          <div className='illustration-outer'>
            <motion.div
+                layout
                 className=' i4 illustration-inner'
                 animate={{ 
                     y: SLOW
