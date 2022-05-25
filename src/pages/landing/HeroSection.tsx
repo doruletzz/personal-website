@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react'
+import React, { useState, useEffect } from 'react'
 import { Button, Col, Image, Row, Container } from 'react-bootstrap';
 import { FaAddressBook, FaHouseUser, FaLaptopHouse, FaLocationArrow, FaMapPin, FaSearchLocation } from 'react-icons/fa';
 import { useAppSelector } from '../../redux/app/hooks';
@@ -32,10 +32,14 @@ const HeroSection = () => {
         <Row className="align-items-center">
           <Col lg={9} md={8} sm={12} className={styles.content}>
             <div className={styles.header} >
-              <Header content={"LOCATED IN CLUJ-NAPOCA, ROMANIA"} icon={<FaHouseUser />} sectionLink="#hero" />
+              <div className={isMobile && styles.mobile}>
+                <Header content={"LOCATED IN CLUJ-NAPOCA, ROMANIA"} icon={<FaHouseUser />} sectionLink="#hero" />
+              </div>
             </div>
             <h1 className={styles.heading}>
-              hi, i'm dorletz. {!isMobile && <br />} a <b className={styles.highlighted}>passionate</b> {!isMobile && <br />} frontend developer
+              <div className={isMobile && styles.mobile}>
+                hi, i'm dorletz. {!isMobile && <br />} a <b className={styles.highlighted}>passionate</b> {!isMobile && <br />} frontend developer
+              </div>
             </h1>
 
             <Button className={styles.btn_primary}>Latest Works</Button>
@@ -44,7 +48,7 @@ const HeroSection = () => {
           <Col lg={3} md={4} sm={12}  >
             <div className={styles.hero_image}>
 
-            <HeroIllustration width={"100%"}  />
+              <HeroIllustration width={"100%"} />
             </div>
             {/* <Image className={styles.hero_image} src={heroIllustration} /> */}
           </Col>

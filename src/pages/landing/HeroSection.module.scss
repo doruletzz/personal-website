@@ -10,7 +10,6 @@
 
 
 .hero_image{
-
     display: block;
     margin-left: auto;
     margin-right: auto;
@@ -22,6 +21,8 @@
     font-weight: 400;
 
     font-size: 1rem;
+
+
 
     margin-bottom: 1rem;
     @include themify() {
@@ -41,7 +42,12 @@
     .highlighted {
         color: $highlight-secondary !important;
     }
+
+    .mobile{
+        font-size: 2rem;
+    }
 }
+
 
 .btn_primary{
     @include themify() {

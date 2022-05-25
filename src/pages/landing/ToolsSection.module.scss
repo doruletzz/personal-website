@@ -16,6 +16,12 @@
 }
 
 .card_title{
+    padding: 0.5rem 0;
+    text-align: left;
+    font-family: $font-family-primary;
+    font-size: 1.25rem !important;
+    font-weight: 700;
+
     @include themify() {
         color: themed($text-primary) ;
     }
@@ -25,10 +31,13 @@
     @include themify() {
         color: themed($text-secondary) ;
     }
+    text-align: left;
+    font-size: 1rem;
+    font-family: $font-family-content;
+
+    height: 6rem;
 }
 
-.card_img{
-}
 
 .title{
     padding: 0.5rem 0;
@@ -77,10 +86,16 @@
         color: themed($text-secondary) ;
     }
 
-    margin-bottom: 1rem;
     .highlighted {
         color: $highlight-secondary !important;
     }
+}
+
+.card_icon{
+    height: 5rem;
+    width: auto;
+    align-items: center;
+    margin: 2rem auto 3rem auto;
 }
 
 .btn_primary{

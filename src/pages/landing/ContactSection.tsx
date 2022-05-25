@@ -28,7 +28,6 @@ const ContactSection = () => {
                         <h1 className={styles.heading}>Reach Out</h1>
                         <h5 className={styles.content}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Tellus sed integer pulvinar quam scelerisque. Arcu hendrerit ut aliquet lorem vitae sit. Ut ornare sed iaculis blandit nulla. Habitant maecenas maecenas arcu auctor fermentum egestas urna.</h5>
 
-
                         <CardGroup>
                             <Card>
                                 <Card.Body>

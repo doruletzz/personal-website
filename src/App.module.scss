@@ -4,6 +4,14 @@ section {
   padding-top: 4rem;
 }
 
+
+::selection{
+  @include themify(){
+    background-color: themed("text-secondary");
+    color: themed("background-tertiary");
+}
+}
+
 .bg{
   @include themify(){
       background-color: themed("background-primary");

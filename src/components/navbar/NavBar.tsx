@@ -66,7 +66,7 @@ const NavBar = () => {
             </Link>
           </Navbar.Brand>
           <Nav>
-            <Nav.Link className={styles.navlink} href="#tools">
+            <Nav.Link className={styles.navlink} href="http://resume.dorletz.com">
               {isScrolled || isMobile ? <ResumeIcon className={styles.icon_theme_scrolled} /> : <p>resume</p>}
             </Nav.Link>
             <Nav.Link className={styles.navlink} href="#works">

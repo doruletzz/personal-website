@@ -17,23 +17,17 @@ import SmoothScroll from './utils/SmoothScroll';
 
 function App() {
 
-
-
-
-
-
-
   const { isDark } = useAppSelector(state => state.theme);
 
   return (
 
     <div className={isDark ? styles.theme__dark : styles.theme__light}>
-      <Router>
+      <Router  >
         <div className={styles.bg}>
           <Container >
             <Row>
               <NavBar />
-              <Routes >
+              <Routes  >
                 <Route path="/" element={<LandingPage />} />
                 <Route path="/blog/:slug" element={<UnderConstructionPage />} />
               </Routes>

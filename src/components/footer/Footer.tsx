@@ -12,26 +12,26 @@ const Footer = () => {
 
   return (
     <>
-    <div className={isDark ? styles.theme__dark : styles.theme__light}>
+      <div className={isDark ? styles.theme__dark : styles.theme__light}>
 
-      <div className={styles.background}>
-    </div>
-      <Container fluid className={`${styles.footer} ${"sticky-bottom"}`}>
-        <Row>
-          <Col>
-            <div className={styles.logo}>
-              <Logo isSmall={true} />
-            </div>
-          </Col>
-          <Col>
-            <p className={styles.copyright}>
-              done by me with ❤︎ and coffee
-            </p>
-          </Col>
+        <div className={styles.background}>
+        </div>
+        <Container fluid className={`${styles.footer} ${"sticky-bottom"}`}>
+          <Row>
+            <Col>
+              <div className={styles.logo}>
+                <Logo isSmall={true} />
+              </div>
+            </Col>
+            <Col>
+              <p className={styles.copyright}>
+                💻 by me with ♥️ and coffee
+              </p>
+            </Col>
 
 
-        </Row>
-      </Container>
+          </Row>
+        </Container>
       </div>
     </>
   )

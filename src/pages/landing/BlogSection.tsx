@@ -46,7 +46,7 @@ const BlogSection = () => {
             <Col lg={4} md={6}>
               {posts.map(({ title, summary, createdAt, slug }, idx) => (
                 <div key={idx} className={styles.blog_post_card}>
-                  <Link to={"blog/" + slug}>
+                  <Link to={"blog/" + slug} >
                     <BlogPostCard title={title} summary={summary} date={createdAt?.toLocaleString()} time="5 min" />
                   </Link>
                 </div>

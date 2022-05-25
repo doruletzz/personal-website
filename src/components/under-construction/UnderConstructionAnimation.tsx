@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useLayoutEffect } from 'react';
 import { motion } from 'framer-motion';
 
 import './Illustration.scss';
@@ -12,6 +12,7 @@ import {Container} from 'react-bootstrap';
 
 
 const Animation = () => {
+
     const SLOW = 44;
 
     const AVG = 33;

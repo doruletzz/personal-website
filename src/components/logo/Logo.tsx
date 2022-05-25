@@ -19,13 +19,15 @@ function Logo({isSmall} : LogoProps) {
 
     const [index, setIndex] = useState(0);
 
+    const [isInitial, setIsInitial] = useState(true);
 
     useEffect(() => {
         const intervalId = setInterval(() =>
-            setIndex(index => ( index + 1 % TEXTS.length)),
-            5000 // every 5 seconds
+            {setIndex(index => ( index + 1 % TEXTS.length)); setIsInitial(false)},
+            10000 // every 10 seconds
 
         );
+         
         return () => clearTimeout(intervalId);
     }, [index]);
 
@@ -34,18 +36,19 @@ function Logo({isSmall} : LogoProps) {
         
         <div className={isDark ? styles.theme__dark : styles.theme__light}>
             <h1 className={isSmall ? styles.logo_sm : styles.logo_xl}
-                onMouseEnter={() => { setIndex(index + 1) }}
+                onMouseEnter={() => { setIndex(index + 1); setIsInitial(false) }}
             >
-                    {`${TEXTS[index % TEXTS.length]}`.split("").map((n, i) => (
+                { `${TEXTS[index % TEXTS.length]}`.split("").map((n, i) => (
                         <TextTransition
                             key={i}
                             text={n}
-                            delay={i * 300}
+                            delay={isInitial ? 0 : i * 300}
                             springConfig={presets.gentle}
                             inline={true}
                             noOverflow={false}
                         />
-                    )) }
+                    )) 
+                }
             </h1>
         </div>
 

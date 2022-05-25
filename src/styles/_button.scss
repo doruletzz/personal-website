@@ -1,6 +1,9 @@
 @use './custom_theme' as *;
 
 @mixin custom_button_primary($background_color, $content_color , $border_color){
+    -webkit-transition: none !important;
+    transition: none !important;
+
     background-color: $background_color;
 
     font-family: $font-family-content;
@@ -26,6 +29,9 @@
 }
 
 @mixin custom_button_secundary($background_color, $content_color , $border_color){
+    -webkit-transition: none !important;
+    transition: none !important;
+
     background-color: $background_color;
 
     font-family: $font-family-content;
